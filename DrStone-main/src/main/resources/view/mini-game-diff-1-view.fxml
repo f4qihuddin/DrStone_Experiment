@@ -1,0 +1,121 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.FlowPane?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.RowConstraints?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane prefHeight="650.0" prefWidth="1200.0" xmlns="http://javafx.com/javafx/22" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.MiniGameController">
+   <children>
+      <VBox layoutX="170.0" layoutY="31.0" prefHeight="400.0" prefWidth="600.0" spacing="20.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+         <children>
+            <FlowPane fx:id="board" alignment="CENTER" hgap="5.0" prefHeight="408.0" prefWidth="1092.0" scaleX="0.9" scaleY="0.9" vgap="5.0">
+               <children>
+                  <ImageView fx:id="card" fitHeight="300.0" fitWidth="200.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../images/Kapur.jpg" />
+                     </image>
+                  </ImageView>
+                  <ImageView fx:id="card1" fitHeight="300.0" fitWidth="200.0" layoutX="254.0" layoutY="10.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../images/Kapur.jpg" />
+                     </image>
+                  </ImageView>
+                  <ImageView fx:id="card11" fitHeight="300.0" fitWidth="200.0" layoutX="313.0" layoutY="10.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../images/Kapur.jpg" />
+                     </image>
+                  </ImageView>
+                  <ImageView fx:id="card111" fitHeight="300.0" fitWidth="200.0" layoutX="372.0" layoutY="10.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../images/Kapur.jpg" />
+                     </image>
+                  </ImageView>
+                  <ImageView fx:id="card1111" fitHeight="300.0" fitWidth="200.0" layoutX="431.0" layoutY="10.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../images/Kapur.jpg" />
+                     </image>
+                  </ImageView>
+                  <ImageView fx:id="card11111" fitHeight="300.0" fitWidth="200.0" layoutX="490.0" layoutY="10.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../images/Kapur.jpg" />
+                     </image>
+                  </ImageView>
+                  <ImageView fx:id="card111111" fitHeight="300.0" fitWidth="200.0" layoutX="254.0" layoutY="165.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../images/Kapur.jpg" />
+                     </image>
+                  </ImageView>
+                  <ImageView fx:id="card1111111" fitHeight="300.0" fitWidth="200.0" layoutX="313.0" layoutY="165.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../images/Kapur.jpg" />
+                     </image>
+                  </ImageView>
+                  <ImageView fx:id="card11111111" fitHeight="300.0" fitWidth="200.0" layoutX="372.0" layoutY="165.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../images/Kapur.jpg" />
+                     </image>
+                  </ImageView>
+                  <ImageView fx:id="card111111111" fitHeight="300.0" fitWidth="200.0" layoutX="431.0" layoutY="165.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../images/Kapur.jpg" />
+                     </image>
+                  </ImageView>
+               </children>
+               <VBox.margin>
+                  <Insets />
+               </VBox.margin>
+            </FlowPane>
+            <HBox alignment="CENTER" prefHeight="50.0" prefWidth="600.0" spacing="150.0">
+               <children>
+                  <GridPane prefHeight="54.0" prefWidth="415.0" vgap="10.0">
+                    <columnConstraints>
+                      <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                      <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                    </columnConstraints>
+                    <rowConstraints>
+                      <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                      <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                    </rowConstraints>
+                     <children>
+                        <Label text="Guesses :">
+                           <font>
+                              <Font size="24.0" />
+                           </font>
+                        </Label>
+                        <Label prefHeight="63.0" prefWidth="208.0" text="Correct Guesses:" GridPane.rowIndex="1">
+                           <font>
+                              <Font size="24.0" />
+                           </font></Label>
+                        <Label fx:id="guesses" text="0" GridPane.columnIndex="1">
+                           <font>
+                              <Font size="24.0" />
+                           </font></Label>
+                        <Label fx:id="correctGuesses" text="0" GridPane.columnIndex="1" GridPane.rowIndex="1">
+                           <font>
+                              <Font size="24.0" />
+                           </font></Label>
+                     </children>
+                  </GridPane>
+                  <Button alignment="CENTER" mnemonicParsing="false" onAction="#playAgain" prefHeight="40.0" prefWidth="200.0" stylesheets="@color.css" text="Play Again">
+                     <font>
+                        <Font size="24.0" />
+                     </font></Button>
+               </children>
+            </HBox>
+         </children>
+         <padding>
+            <Insets top="10.0" />
+         </padding>
+      </VBox>
+   </children>
+</AnchorPane>
