@@ -16,19 +16,19 @@
       </Text>
       <HBox layoutX="275.0" layoutY="245.0" spacing="50.0">
          <children>
-            <AnchorPane prefHeight="300.0" prefWidth="300.0" styleClass="anchorPanes" stylesheets="@color.css">
+            <AnchorPane prefHeight="300.0" prefWidth="300.0" styleClass="anchorPanes" stylesheets="@style.css">
                <children>
                   <Button fx:id="learningButton" layoutX="75.0" layoutY="135.0" mnemonicParsing="false" onMouseClicked="#goToLearning" prefHeight="30.0" prefWidth="150.0" scaleX="1.5" scaleY="1.5" text="LEARNING" />
                </children>
             </AnchorPane>
-            <AnchorPane prefHeight="300.0" prefWidth="300.0" styleClass="anchorPanes" stylesheets="@color.css">
+            <AnchorPane prefHeight="300.0" prefWidth="300.0" styleClass="anchorPanes" stylesheets="@style.css">
                <children>
                   <Button fx:id="miniGameButton" layoutX="75.0" layoutY="137.0" mnemonicParsing="false" onMouseClicked="#goToMiniGameMenu" prefHeight="30.0" prefWidth="150.0" scaleX="1.5" scaleY="1.5" text="MINI GAME" />
                </children>
             </AnchorPane>
          </children>
       </HBox>
-      <Button fx:id="homeButton" layoutX="1062.0" layoutY="42.0" mnemonicParsing="false" onMouseClicked="#goToHome" prefHeight="80.0" prefWidth="80.0" stylesheets="@color.css" AnchorPane.rightAnchor="40.0" AnchorPane.topAnchor="40.0">
+      <Button fx:id="homeButton" layoutX="1062.0" layoutY="42.0" mnemonicParsing="false" onMouseClicked="#goToHome" prefHeight="80.0" prefWidth="80.0" stylesheets="@style.css" AnchorPane.rightAnchor="40.0" AnchorPane.topAnchor="40.0">
          <graphic>
             <SVGPath content="M11 6a3 3 0 1 1-6 0 3 3 0 0 1 6 0 M0 8a8 8 0 1 1 16 0A8 8 0 0 1 0 8m8-7a7 7 0 0 0-5.468 11.37C3.242 11.226 4.805 10 8 10s4.757 1.225 5.468 2.37A7 7 0 0 0 8 1" scaleX="3.0" scaleY="3.0" />
          </graphic>

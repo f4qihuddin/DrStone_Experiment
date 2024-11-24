@@ -14,7 +14,7 @@
    <children>
       <VBox spacing="50.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
          <children>
-            <AnchorPane prefHeight="100.0" prefWidth="1200.0" styleClass="anchorPanes" stylesheets="@color.css">
+            <AnchorPane prefHeight="100.0" prefWidth="1200.0" styleClass="anchorPanes" stylesheets="@style.css">
                <children>
                   <Button fx:id="mainMenuButton" layoutX="21.0" layoutY="20.0" mnemonicParsing="false" onMouseClicked="#goToMainMenu" prefHeight="60.0" prefWidth="60.0" AnchorPane.leftAnchor="25.0">
                      <graphic>
@@ -36,7 +36,7 @@
                   <Insets />
                </VBox.margin>
             </AnchorPane>
-            <AnchorPane prefHeight="200.0" prefWidth="600.0" styleClass="anchorPanes" stylesheets="@color.css">
+            <AnchorPane prefHeight="200.0" prefWidth="600.0" styleClass="anchorPanes" stylesheets="@style.css">
                <children>
                   <VBox layoutX="166.0" layoutY="25.0" />
                   <Text fx:id="randomQuotesText" layoutX="166.0" layoutY="76.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Random Quotes" textAlignment="JUSTIFY" wrappingWidth="468.479736328125">
@@ -56,7 +56,7 @@
                         <Font size="18.0" />
                      </font>
                   </TextField>
-                  <Button fx:id="searchButton" mnemonicParsing="false" prefHeight="50.0" prefWidth="63.0">
+                  <Button fx:id="searchButton" mnemonicParsing="false" onAction="#searchStone" prefHeight="50.0" prefWidth="63.0">
                      <graphic>
                         <SVGPath content="M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001q.044.06.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1 1 0 0 0-.115-.1zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0" scaleX="2.0" scaleY="2.0" />
                      </graphic>

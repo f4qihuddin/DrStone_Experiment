@@ -7,7 +7,6 @@ import java.sql.PreparedStatement;
 import java.sql.SQLException;
 import java.sql.ResultSet;
 import java.util.ArrayList;
-import java.util.List;
 
 public class StoneDAO extends BaseDAO {
 
@@ -72,26 +71,28 @@ public class StoneDAO extends BaseDAO {
         return listOfStones;
     }
 
-    public static void searchStone(String name) {
-        try {
+    public static Stone searchStone(String name)
+    {
+        Stone stone = null;
+        try
+        {
             con = getCon();
-            String query = String.format("SELECT * FROM batu WHERE name = '%s'", name);
+            String query = String.format("SELECT * FROM batu WHERE namaBatu = '%s'", name);
             st = con.prepareStatement(query);
             ResultSet resultSet = st.executeQuery();
-            if (resultSet.next()) {
-                System.out.println("Nama Batu: " + resultSet.getString("namaBatu"));
-                System.out.println("Deskripsi: " + resultSet.getString("deskripsi"));
-                System.out.println("Karakteristik: " + resultSet.getString("karakteristik"));
-                System.out.println("Gambar: " + resultSet.getString("gambar"));
-                System.out.println("Sumber YouTube: " + resultSet.getString("sumberYoutube"));
-                System.out.println("Sumber Website: " + resultSet.getString("sumberWebsite"));
-                System.out.println("Sumber Google Scholar: " + resultSet.getString("sumberGoogleScholar"));
+            if (resultSet.next())
+            {
+                stone = new Stone(resultSet.getString("namaBatu"), resultSet.getString("gambar"), resultSet.getString("deskripsi"), resultSet.getString("karakteristik"), resultSet.getString("sumberGoogleScholar"), resultSet.getString("sumberWebsite"), resultSet.getString("sumberYoutube"));
             }
-        } catch (SQLException e) {
+        }
+        catch (SQLException e)
+        {
             e.printStackTrace();
-        } finally {
+        }
+        finally
+        {
             closeCon(con);
         }
-
+        return stone;
     }
 }

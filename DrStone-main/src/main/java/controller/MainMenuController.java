@@ -31,7 +31,7 @@ public class MainMenuController{
     public void goToLearning() throws IOException
     {
         Stage stage = (Stage) learningButton.getScene().getWindow();
-        FXMLLoader fxmlLoader = new FXMLLoader(MainController.class.getResource("/view/learning-view.fxml"));
+        FXMLLoader fxmlLoader = new FXMLLoader(MainController.class.getResource("/view/root-view.fxml"));
         Scene scene = new Scene(fxmlLoader.load());
         stage.setTitle("Learning");
         stage.setScene(scene);

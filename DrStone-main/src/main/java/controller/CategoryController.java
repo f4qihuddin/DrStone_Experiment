@@ -3,15 +3,12 @@ package controller;
 import dao.CategoryDAO;
 import dao.SubCategoryDAO;
 import javafx.fxml.FXML;
-import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
 import javafx.geometry.Pos;
-import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.layout.GridPane;
 import javafx.scene.layout.VBox;
 import javafx.scene.text.Font;
-import javafx.stage.Stage;
 import model.Category;
 import model.SubCategory;
 
@@ -27,7 +24,9 @@ public class CategoryController implements Initializable
 
     private ArrayList<Category> categories = new ArrayList<>();
 
-    ArrayList<SubCategory> subCategories = new ArrayList<>();
+    private ArrayList<SubCategory> subCategories = new ArrayList<>();
+
+    private RootController rootController;
 
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle)
@@ -59,10 +58,14 @@ public class CategoryController implements Initializable
                 button2.setPrefWidth(250);
                 button2.setFont(new Font("Arial", 15));
                 button2.setId(subCategories.get(j).getName());
-                button2.setOnMouseClicked(event -> {
-                    try {
-                        showListOfStones(button2);
-                    } catch (IOException e) {
+                button2.setOnMouseClicked(event ->
+                {
+                    try
+                    {
+                        rootController.showStoneList(button2.getId());
+                    }
+                    catch (IOException e)
+                    {
                         throw new RuntimeException(e);
                     }
                 });
@@ -96,12 +99,8 @@ public class CategoryController implements Initializable
         }
     }
 
-    public void showListOfStones(Button button) throws IOException
+    public void setRootController(RootController rootController)
     {
-        Stage stage = (Stage) button.getScene().getWindow();
-        FXMLLoader fxmlLoader = new FXMLLoader(MainController.class.getResource("/view/list-of-stones-view.fxml"));
-        Scene scene = new Scene(fxmlLoader.load());
-        stage.setTitle("List of Stones");
-        stage.setScene(scene);
+        this.rootController = rootController;
     }
 }

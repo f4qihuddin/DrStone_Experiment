@@ -11,6 +11,7 @@ module org.example.drstone {
     requires eu.hansolo.tilesfx;
     requires com.almasb.fxgl.all;
     requires java.sql;
+    requires java.desktop;
 
     exports main;
     exports controller;

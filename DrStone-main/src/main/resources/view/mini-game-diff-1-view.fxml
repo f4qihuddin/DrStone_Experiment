@@ -106,7 +106,7 @@
                            </font></Label>
                      </children>
                   </GridPane>
-                  <Button alignment="CENTER" mnemonicParsing="false" onAction="#playAgain" prefHeight="40.0" prefWidth="200.0" stylesheets="@color.css" text="Play Again">
+                  <Button alignment="CENTER" mnemonicParsing="false" onAction="#playAgain" prefHeight="40.0" prefWidth="200.0" stylesheets="@style.css" text="Play Again">
                      <font>
                         <Font size="24.0" />
                      </font></Button>
