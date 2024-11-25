@@ -2,14 +2,21 @@ package controller;
 
 import dao.StoneDAO;
 import javafx.fxml.FXML;
+import javafx.fxml.FXMLLoader;
+import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.Hyperlink;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
+import javafx.scene.layout.AnchorPane;
 import javafx.scene.text.Text;
+import javafx.scene.control.TextField;
 import javafx.event.ActionEvent;
+import javafx.stage.Stage;
 import model.Stone;
-import java.awt.Desktop;
+
+import java.awt.*;
+import java.io.IOException;
 import java.net.URI;
 
 public class StoneController {
@@ -39,6 +46,21 @@ public class StoneController {
 
     @FXML
     private Button bookmark;
+
+    @FXML
+    private AnchorPane dialogBox;
+
+    @FXML
+    private TextField bookmarkName;
+
+    @FXML
+    private Button saveButton;
+
+    @FXML
+    private Button cancelButton;
+
+    @FXML
+    private Button backButton;
 
     private RootController rootController;
 
@@ -114,8 +136,36 @@ public class StoneController {
         }
     }
 
+    public void saveBookmark() throws IOException
+    {
+        rootController.addBookmark(stoneImage, bookmarkName.getText());
+    }
+
     public void bookmarkPage()
     {
+        bookmarkName.setText(stoneName.getText());
 
+        if (!dialogBox.isVisible())
+        {
+            dialogBox.setVisible(true);
+        }
+        else
+        {
+            dialogBox.setVisible(false);
+        }
+    }
+
+    public void closeDialogBox()
+    {
+        dialogBox.setVisible(false);
+    }
+
+    public void backToLearningMenu() throws IOException
+    {
+        Stage stage = (Stage) backButton.getScene().getWindow();
+        FXMLLoader fxmlLoader = new FXMLLoader(MainMenuController.class.getResource("/view/learning-view.fxml"));
+        Scene scene = new Scene(fxmlLoader.load());
+        stage.setTitle("Learning Menu");
+        stage.setScene(scene);
     }
 }

@@ -4,6 +4,7 @@ import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
 import javafx.scene.control.ScrollPane;
+import javafx.scene.image.ImageView;
 import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.BorderPane;
 
@@ -73,5 +74,15 @@ public class RootController implements Initializable
         stoneController.setRootController(this);
 
         root.setCenter(stoneView);
+    }
+
+    public void addBookmark(ImageView image, String bookmarkName) throws IOException
+    {
+        FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("/view/bookmark-view.fxml"));
+        ScrollPane bookmarkView = fxmlLoader.load();
+
+        BookmarkController bookmarkController = fxmlLoader.getController();
+        bookmarkController.addBookmark(image, bookmarkName);
+        bookmarkController.setRootController(this);
     }
 }
