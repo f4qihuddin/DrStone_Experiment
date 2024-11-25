@@ -13,8 +13,8 @@ import java.util.Random;
 import java.util.ResourceBundle;
 import javafx.fxml.Initializable;
 
-public class LearningController implements Initializable{
-
+public class LearningController implements Initializable
+{
     @FXML
     private Button bookmarkButton;
 

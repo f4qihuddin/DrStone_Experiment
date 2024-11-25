@@ -160,12 +160,15 @@ public class StoneController {
         dialogBox.setVisible(false);
     }
 
-    public void backToLearningMenu() throws IOException
+    public void backToLearningMenu()
     {
-        Stage stage = (Stage) backButton.getScene().getWindow();
-        FXMLLoader fxmlLoader = new FXMLLoader(MainMenuController.class.getResource("/view/learning-view.fxml"));
-        Scene scene = new Scene(fxmlLoader.load());
-        stage.setTitle("Learning Menu");
-        stage.setScene(scene);
+        try
+        {
+            rootController.showLearningView();
+        }
+        catch (IOException e)
+        {
+            throw new RuntimeException(e);
+        }
     }
 }
